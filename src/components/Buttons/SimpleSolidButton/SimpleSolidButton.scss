@@ -1,0 +1,80 @@
+.simple_btn {
+  border-radius: 5px;
+  transition: all 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 24px;
+  display: inline-block;
+  position: relative;
+  z-index: 3;
+  font-weight: 400;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  margin: 5px;
+  transition: background-color 0.15s, color 0.15s;
+  cursor: pointer;
+
+  &.white {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  &.red {
+    background-color: rgba(153, 26, 26, 1);
+    color: rgba(255, 255, 255, 1);
+  }
+  &.gray {
+    color: rgb(42, 48, 62);
+    background-color: rgb(213, 216, 221);
+  }
+  &.blue {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(92, 101, 115, 0.65);
+  }
+  &.colored {
+    box-shadow: 0 0 0 1px rgb(153, 26, 26);
+    box-shadow: 0 0 0 1px rgba(153, 26, 26, 0.75);
+    // color: rgba(255, 255, 255, 1);
+    color: rgba(153, 26, 26, 1);
+  }
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus-visible {
+    &.red {
+      background-color: #781d1c;
+    }
+    &.blue {
+      color: rgba(255, 255, 255, 1);
+      background-color: rgba(92, 101, 115, 1);
+    }
+    &.gray {
+      color: rgb(39, 45, 58);
+      background-color: rgb(189, 193, 201);
+    }
+  }
+  &:disabled {
+    color: rgb(131, 131, 131) !important;
+    background-color: rgb(238, 238, 238) !important;
+    cursor: default;
+  }
+}
+
+.dark {
+  .simple_btn {
+    &:disabled {
+      color: rgb(189, 189, 189) !important;
+      background-color: rgba(238, 238, 238, 0.25) !important;
+    }
+  }
+}
+
+.displayFlex {
+  display: flex;
+  margin-top: 20px;
+  &.center {
+    justify-content: center;
+    align-items: center;
+  }
+}
