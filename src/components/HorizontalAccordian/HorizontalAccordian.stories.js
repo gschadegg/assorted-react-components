@@ -5,7 +5,7 @@ export default {
     component: HorizontalAccordian,
     argsTypes:{
         data: {
-           table: { expanded: true } 
+           control: 'object'
         }
     }
 }

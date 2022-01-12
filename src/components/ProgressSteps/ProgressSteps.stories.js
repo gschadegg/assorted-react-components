@@ -13,5 +13,5 @@ const Template = (args) => <ProgressSteps {...args} />
 
 export const SimpleProgressSteps = Template.bind({})
 SimpleProgressSteps.args = {
-    steps: '4',
+    steps: '4'
 }

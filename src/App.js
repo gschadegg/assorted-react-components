@@ -1,6 +1,6 @@
 // import HorizontalAccordian from './components/HorizontalAccordian/HorizontalAccordian';
 import './App.scss';
-import ProgressSteps from './components/ProgressSteps/ProgressSteps';
+import ProgressSteps from './components/ProgressSteps/TitledProgressSteps/TitledProgressSteps';
 
 function App() {
   return (
@@ -15,7 +15,12 @@ function App() {
           Horizontal Image Accordian
         </a>
 
-        <ProgressSteps numSteps={8} darkTheme={true} />
+        <ProgressSteps steps={[
+          'First',
+          'Second',
+          'Third',
+          'Forth',
+        ]} />
         {/* <HorizontalAccordian data={[
           {'title': 'The Mountains', 'tag':'sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt', 'imageAsBG':'one.webp', 'icon':'landscape.svg'},
           {'title': 'Mighty Stream', 'tag':'quis nostrud exercitation ullamco laboris nisi ut aliquip ex', 'imageAsBG':'three.webp', 'icon':'waves.svg'},

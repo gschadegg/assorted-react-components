@@ -6,10 +6,14 @@ const ProgressSteps = ({ steps }) => {
     const [currentStep, setCurrentStep] = useState(1)
     const [progressLength, setProgressLength] = useState('0%')
     
+    //assures that there are at least 2 steps
     if(!steps || steps<=1){
         steps = 2
     }
+
     const numSteps = parseInt(steps)
+
+    //creates markers html
     const stepMarkers = [...Array(parseInt(numSteps))].map((el, idx) => ( 
          <div key={idx+1} className={`progressStep_stepMarker ${idx+1 <= currentStep ? 'active' : ''}`}>
              {idx+1}
@@ -17,6 +21,7 @@ const ProgressSteps = ({ steps }) => {
         ) 
     )
 
+    //sets the next step as active
     const increaseStepHandler = useCallback(() => {
         if(currentStep === numSteps) return
         if(currentStep > numSteps) {
@@ -27,6 +32,7 @@ const ProgressSteps = ({ steps }) => {
         setCurrentStep(prevState =>  prevState + 1)
     },[currentStep, numSteps])
 
+    //sets the prev step as active
     const decreaseStepHandler = useCallback(() => {
         if(currentStep === 1) return
         if(currentStep < 1) {
@@ -38,8 +44,9 @@ const ProgressSteps = ({ steps }) => {
             return
         }
         setCurrentStep(prevState =>  prevState - 1)
-    },[currentStep])
+    },[currentStep, numSteps])
 
+    //sets length of progress bar
     useEffect(() => {
         setProgressLength( `${((currentStep-1) / (numSteps-1)) * 100}%`)
         return () => {

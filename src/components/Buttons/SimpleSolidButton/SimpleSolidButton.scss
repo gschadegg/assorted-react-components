@@ -31,6 +31,10 @@
     color: rgba(255, 255, 255, 0.8);
     background-color: rgba(92, 101, 115, 0.65);
   }
+  &.teal {
+    background-color: #0c8dbf;
+    color: rgba(255, 255, 255, 0.8);
+  }
   &.colored {
     box-shadow: 0 0 0 1px rgb(153, 26, 26);
     box-shadow: 0 0 0 1px rgba(153, 26, 26, 0.75);
@@ -52,6 +56,10 @@
     &.gray {
       color: rgb(39, 45, 58);
       background-color: rgb(189, 193, 201);
+    }
+    &.teal {
+      background-color: #0978a3;
+      color: rgb(221, 223, 226);
     }
   }
   &:disabled {
