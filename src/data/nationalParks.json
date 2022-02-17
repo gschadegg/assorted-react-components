@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Capitol Reef",
+    "location": "UT, USA",
+    "coordinates": {
+      "lat": "38.089600",
+      "lng": "-111.149910"
+    }
+  },
+  {
+    "name": "Pinnacles",
+    "location": "CA, USA",
+    "coordinates": {
+      "lat": "36.491508",
+      "lng": "-121.197243"
+    }
+  },
+  {
+    "name": "Rocky Mountain",
+    "location": "CO, USA",
+    "coordinates": {
+      "lat": "40.343182",
+      "lng": "-105.688103"
+    }
+  },
+  {
+    "name": "White Sands",
+    "location": "NM, USA",
+    "coordinates": {
+      "lat": "32.779720",
+      "lng": "-106.171669"
+    }
+  },
+  {
+    "name": "Joshua Tree",
+    "location": "CA, USA",
+    "coordinates": {
+      "lat": "33.881866",
+      "lng": "-115.900650"
+    }
+  },
+  {
+    "name": "Hot Springs",
+    "location": "AR, USA",
+    "coordinates": {
+      "lat": "34.521530",
+      "lng": "-93.042267"
+    }
+  },
+  {
+    "name": "Kaloko-Honokōhau",
+    "location": "HI, USA",
+    "coordinates": {
+      "lat": "19.678328",
+      "lng": "-156.020477"
+    }
+  },
+  {
+    "name": "Kenai Fjords",
+    "location": "AK, USA",
+    "coordinates": {
+      "lat": "60.043777",
+      "lng": "-149.816360"
+    }
+  },
+  {
+    "name": "Yellowstone",
+    "location": "WY, USA",
+    "coordinates": {
+      "lat": "44.423691",
+      "lng": "-110.588516"
+    }
+  },
+  {
+    "name": "Great Smoky Mountains",
+    "location": "TN, USA",
+    "coordinates": {
+      "lat": "35.611763",
+      "lng": "-83.489548"
+    }
+  },
+  {
+    "name": "Zion",
+    "location": "UT, USA",
+    "coordinates": {
+      "lat": "37.297817",
+      "lng": "-113.028770"
+    }
+  }
+]

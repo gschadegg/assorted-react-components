@@ -19,6 +19,7 @@ body {
   margin: 0 auto;
   .accordianPart {
     flex: 0;
+    cursor: pointer;
     flex-basis: 120px;
     display: flex;
     justify-content: flex-start;
@@ -32,11 +33,12 @@ body {
       margin: 32px 8px;
       text-align: left;
       background-color: transparent;
-      transition: background-color 0.3s ease-in;
+      transition: all 0.3s ease-in;
+      // transition: background-color 0.3s ease-in;
       & > div:last-child {
         width: 0;
         height: 0;
-        transition: width 0.6s ease-in 0s, height 0.6s ease-in 6s;
+        // transition: width 0.6s ease-in 0s, height 0.6s ease-in 6s;
       }
     }
     .accordianPart_icon {
@@ -56,17 +58,14 @@ body {
     p {
       color: #fff;
       margin: 0 0 0 24px;
-      font-size: 1.75rem;
+      font-size: 0;
       transition: height 0.2s ease-in 0.3s, width 0.2s ease-in 0.3s,
-        opacity 0.2s ease-in 0.3s;
+        opacity 0.2s ease-in 0.2s, font-size 0.2s;
       // transition-delay: 1.5s;
       opacity: 0;
       height: 0;
       width: 0;
       overflow: hidden;
-    }
-    p {
-      font-size: 1.5rem;
     }
   }
 }
@@ -113,6 +112,10 @@ body {
       opacity: 1;
       height: auto;
       width: auto;
+      font-size: 1.75rem;
+    }
+    p {
+      font-size: 1.5rem;
     }
   }
   &:not(.active):hover::before,

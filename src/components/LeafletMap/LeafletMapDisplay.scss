@@ -1,0 +1,30 @@
+.mapDisplay_wrap {
+  display: flex;
+  width: 100%;
+}
+.mapDisplay_locationList {
+  max-width: 240px;
+}
+.leafletMap-container {
+  height: calc(100vh - 100px);
+  min-height: 600px;
+  width: 80%;
+  flex: 1;
+  .leaflet-tile-pane {
+    -webkit-filter: contrast(1.2) url('./../../assets/filter.svg/#teal-white');
+    filter: contrast(1.2) url('./../../assets/filter.svg/#teal-white');
+  }
+
+  // @media (min-width: 1200px) {
+  //   .map-container {
+  //     height: calc(100vh - 255px);
+  //   }
+  // }
+
+  .leaflet-control-attribution {
+    display: none;
+  }
+  // @include mixins.mq(mobileLG) {
+  //   height: calc(100vh - 250px);
+  // }
+}

@@ -1,6 +1,6 @@
 // import HorizontalAccordian from './components/HorizontalAccordian/HorizontalAccordian';
-import './App.scss';
-import ProgressSteps from './components/ProgressSteps/TitledProgressSteps/TitledProgressSteps';
+import './App.scss'
+import LeafletMapDisplay from './components/LeafletMap/LeafletMapDisplay'
 
 function App() {
   return (
@@ -15,12 +15,14 @@ function App() {
           Horizontal Image Accordian
         </a>
 
-        <ProgressSteps steps={[
+        <LeafletMapDisplay />
+
+        {/* <ProgressSteps steps={[
           'First',
           'Second',
           'Third',
           'Forth',
-        ]} />
+        ]} /> */}
         {/* <HorizontalAccordian data={[
           {'title': 'The Mountains', 'tag':'sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt', 'imageAsBG':'one.webp', 'icon':'landscape.svg'},
           {'title': 'Mighty Stream', 'tag':'quis nostrud exercitation ullamco laboris nisi ut aliquip ex', 'imageAsBG':'three.webp', 'icon':'waves.svg'},
@@ -29,9 +31,8 @@ function App() {
           {'title': 'Rolling Fog', 'tag':'quis nostrud exercitation ullamco laboris nisi ut aliquip ex', 'imageAsBG':'six.webp', 'icon':'cloud.svg'},
         ]}/> */}
       </header>
-     
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
