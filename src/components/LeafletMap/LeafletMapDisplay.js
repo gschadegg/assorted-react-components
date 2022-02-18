@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import axios from 'axios'
 
 import LeafletMap from './LeafletMap'
@@ -11,7 +11,9 @@ const LeafletMapDisplay = () => {
   const [location, setLocation] = useState({
     name: '',
     coordinates: [0, 0],
+    parkcode: '',
   })
+  const [locationThingsToDo, setLocationThingsToDo] = useState()
 
   useEffect(() => {
     setMounted(true)
@@ -32,6 +34,7 @@ const LeafletMapDisplay = () => {
         setLocation({
           name: filteredParks[0].name,
           coordinates: [filteredParks[0].latitude, filteredParks[0].longitude],
+          parkcode: filteredParks[0].parkCode,
         })
       } catch (error) {
         setAllLocations(null)
@@ -42,6 +45,23 @@ const LeafletMapDisplay = () => {
     getParkdata()
   }, [])
 
+  useEffect(() => {
+    const getParkThingsToDo = async () => {
+      try {
+        const { data } =
+          await axios.get(`https://developer.nps.gov/api/v1/thingstodo?parkCode=${location.parkcode}&limit=10&api_key=${process.env.REACT_APP_GOVPARKS_KEY}
+        `)
+        setLocationThingsToDo(data.data)
+      } catch (error) {
+        setLocationThingsToDo(null)
+        setMessage('Not finding any data on that specific park')
+      }
+    }
+    if (location.parkcode) {
+      getParkThingsToDo()
+    }
+  }, [location])
+
   //sets Park thats selected
   const setLocationToSelected = (e) => {
     e.preventDefault()
@@ -49,29 +69,44 @@ const LeafletMapDisplay = () => {
       e.target.options[e.target.selectedIndex].dataset.lat,
       e.target.options[e.target.selectedIndex].dataset.lng,
     ]
+    console.log(
+      'new parkcode',
+      e.target.options[e.target.selectedIndex].dataset.parkcode
+    )
     if (!locationCordinates)
       locationCordinates = [allLocations[0].latitude, allLocations[0].longitude]
     setLocation({
       name: `${e.target.options[e.target.selectedIndex].innerHTML}`,
       coordinates: locationCordinates,
+      parkcode: e.target.options[e.target.selectedIndex].dataset.parkcode,
     })
   }
 
-  let locationOptions = 'loading...'
-  if (allLocations) {
-    locationOptions = allLocations.map((park) => {
-      return (
-        <option
-          key={park.name}
-          data-lat={park.latitude}
-          data-lng={park.longitude}
-        >
-          {park.name}
-        </option>
-      )
+  const locationOptions = useMemo(() => {
+    if (allLocations) {
+      return allLocations.map((park) => {
+        console.log(park)
+        return (
+          <option
+            key={park.name}
+            data-lat={park.latitude}
+            data-lng={park.longitude}
+            data-parkcode={park.parkCode}
+          >
+            {park.name}
+          </option>
+        )
+      })
+    }
+  }, [allLocations])
+
+  let listOfThingsToDo
+  if (locationThingsToDo) {
+    console.log(locationThingsToDo)
+    listOfThingsToDo = locationThingsToDo.map((item) => {
+      return <li key={item.title}>{item.title}</li>
     })
   }
-
   if (message) {
     setTimeout(() => {
       setMessage('')
@@ -83,9 +118,17 @@ const LeafletMapDisplay = () => {
       {mounted && (
         <article className="mapDisplay_wrap">
           {message ? <div>{message}</div> : ''}
-          <section className="mapDisplay_locationList" value={location.name}>
-            <select onChange={setLocationToSelected}>{locationOptions}</select>
+          <section className="mapDisplay_locationList">
+            <select onChange={setLocationToSelected} value={location.name}>
+              {locationOptions ? locationOptions : 'loading...'}
+            </select>
+            <span>National Park</span>
           </section>
+          {/* <section className="mapDisplay_locationDataCol">
+            <div className="mapDisplay_DataContainer">
+              <ul>{listOfThingsToDo ? listOfThingsToDo : 'loading...'}</ul>
+            </div>
+          </section> */}
           <LeafletMap location={location} />
         </article>
       )}
