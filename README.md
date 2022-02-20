@@ -12,4 +12,4 @@ Play around with some of the components in my live Storybook [here](https://gsch
 
 To run this project locally, you will need to add the following environment variables to your .env file
 
-`REACT_APP_GOVPARKS_KEY` - needed for some of the map components
+`REACT_APP_GOVPARKS_KEY` - needed for some of the map components (get API Key at [NPS.gov](https://www.nps.gov/subjects/developer/get-started.htm))

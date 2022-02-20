@@ -1,8 +1,13 @@
 .mapDisplay_wrap {
   display: flex;
+  flex-direction: column;
   width: 100%;
   position: relative;
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
 }
+
 .mapDisplay_locationList {
   position: absolute;
   top: 0;
@@ -64,16 +69,33 @@
 }
 
 .mapDisplay_locationDataCol {
-  position: absolute;
-  top: 0;
-  right: 70px;
   z-index: 500;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  top: -100px;
+  overflow-x: auto;
+  h2 {
+    color: gray;
+    font-size: 1.5rem;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  @media (min-width: 800px) {
+    max-width: 432px;
+    top: 0;
+    height: 100vh;
+    // overflow-x: auto;
+  }
 }
 
-.mapDisplay_DataContainer {
+.dataColumn_container {
+  padding: 20px 32px;
   border-radius: 4px;
   background-color: #fcfdfd;
+  min-height: 100vh;
   li {
     color: black;
   }
@@ -81,8 +103,7 @@
 .leafletMap-container {
   height: 100vh;
   min-height: 600px;
-  width: 80%;
-  flex: 1;
+  width: 100%;
   .leaflet-tile-pane {
     -webkit-filter: contrast(1.2) url('./../../assets/filter.svg/#teal-white');
     filter: contrast(1.2) url('./../../assets/filter.svg/#teal-white');
@@ -97,7 +118,8 @@
   .leaflet-control-attribution {
     display: none;
   }
-  // @include mixins.mq(mobileLG) {
-  //   height: calc(100vh - 250px);
-  // }
+  @media (min-width: 800px) {
+    width: calc(100% - 432px);
+    flex: 1;
+  }
 }

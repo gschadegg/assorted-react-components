@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, useMap, Popup } from 'react-leaflet'
 import L from 'leaflet'
 import LocationMarker from './../../assets/locationMarker.png'
 import 'leaflet/dist/leaflet.css'
-import './LeafletMapDisplay.scss'
+import './NationalParksMap.scss'
 
 const MapPlaceholder = () => {
   return (
@@ -14,7 +14,7 @@ const MapPlaceholder = () => {
   )
 }
 
-const LeafletMap = ({ location }) => {
+const LocationMap = ({ location }) => {
   let position
   if (!location.coordinates) {
     position = [0, 0]
@@ -58,4 +58,4 @@ const LeafletMap = ({ location }) => {
   )
 }
 
-export default LeafletMap
+export default LocationMap

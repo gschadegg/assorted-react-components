@@ -1,0 +1,25 @@
+.alertMessage {
+  position: absolute;
+  top: -100%;
+  color: white;
+  width: 80%;
+  left: 50%;
+  text-align: center;
+  border-radius: 0 0 4px 4px;
+  z-index: 600;
+  transform: translateX(-50%);
+  transition: all 0.5s ease-in;
+  opacity: 0;
+  padding: 8px 0;
+  &.active {
+    top: 0;
+    transition: all 0.5s ease-out;
+    opacity: 1;
+  }
+  &.error {
+    background-color: #b80909;
+  }
+  &.confirm {
+    background-color: #16a113;
+  }
+}

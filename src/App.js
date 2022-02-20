@@ -1,6 +1,6 @@
 // import HorizontalAccordian from './components/HorizontalAccordian/HorizontalAccordian';
 import './App.scss'
-import LeafletMapDisplay from './components/LeafletMap/LeafletMapDisplay'
+import NationalParksMap from './components/LeafletMap/NationalParksMap'
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           Horizontal Image Accordian
         </a>
 
-        <LeafletMapDisplay />
+        <NationalParksMap />
 
         {/* <ProgressSteps steps={[
           'First',

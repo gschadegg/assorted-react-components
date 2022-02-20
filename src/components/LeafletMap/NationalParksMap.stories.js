@@ -1,11 +1,11 @@
 import React from 'react'
-import LeafletMapDisplay from './LeafletMapDisplay'
+import NationalParksMap from './NationalParksMap'
 
 export default {
   title: 'Maps/US National Parks With Leaflet ',
-  component: LeafletMapDisplay,
+  component: NationalParksMap,
 }
 
-const Template = (args) => <LeafletMapDisplay {...args} />
+const Template = (args) => <NationalParksMap {...args} />
 
 export const USNationalParksWithLeaflet = Template.bind({})
