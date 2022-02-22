@@ -1,7 +1,7 @@
-import { themes } from '@storybook/theming';
+import { themes } from '@storybook/theming'
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -11,10 +11,14 @@ export const parameters = {
   darkMode: {
     // dark: { ...themes.dark, appBg: 'darkM' },
     current: 'light',
-    stylePreview: true
-  }
+    stylePreview: true,
+  },
+  options: {
+    storySort: {
+      order: ['Maps', 'Components'],
+    },
+  },
 }
-
 
 // import { themes } from '@storybook/theming';
 
