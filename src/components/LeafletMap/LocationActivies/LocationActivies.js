@@ -17,7 +17,6 @@ const LocationActivities = ({ location }) => {
           return
         }
         setSelectedActivity(e.target.innerHTML)
-        console.log('incall', res.data)
         setSelectedActivityDetails(res.data)
       })
       .catch((error) => {
@@ -36,10 +35,7 @@ const LocationActivities = ({ location }) => {
   })
   let listOfDetails
   if (selectedActivityDetails) {
-    console.log('inif', selectedActivityDetails)
     listOfDetails = selectedActivityDetails?.map((detail) => {
-      console.log('detail', detail)
-
       return (
         <li key={detail.id}>
           <h3 id={detail.id}>{detail.title}</h3>

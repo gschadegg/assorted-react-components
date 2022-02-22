@@ -8,7 +8,6 @@ const RecommendedCards = ({ activitiesList }) => {
   const activityCards = useMemo(() => {
     if (activitiesList) {
       return activitiesList.map((item) => {
-        console.log('card list item', item)
         return <RecommendedCard key={item.id} activity={item} />
       })
     }

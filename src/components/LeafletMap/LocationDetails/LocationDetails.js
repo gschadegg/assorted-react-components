@@ -43,7 +43,6 @@ const LocationDetails = ({ location }) => {
     )
     LocationActivites = LocationActivites.splice(0, 10)
   }
-  console.log('activities!', activitiesList)
 
   return (
     <>
