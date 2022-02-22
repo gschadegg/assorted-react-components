@@ -3,6 +3,8 @@
   flex-direction: column;
   width: 100%;
   position: relative;
+  overflow: hidden;
+  border-radius: 10px;
   @media (min-width: 800px) {
     flex-direction: row;
   }
@@ -98,7 +100,7 @@
   margin: 0 auto;
   top: -100px;
   overflow-x: auto;
-  box-shadow: -4px -4px 2px 3px rgb(108, 129, 132, 0.3);
+  box-shadow: 2px 2px 5px 2px rgb(108, 129, 132, 0.3);
   border-radius: 10px;
   h2 {
     color: gray;
