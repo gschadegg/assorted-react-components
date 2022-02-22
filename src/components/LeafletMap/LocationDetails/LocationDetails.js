@@ -5,6 +5,8 @@ import services from './../services/locations'
 
 import './LocationDetails.scss'
 import RecommendedCards from './RecommendedCard/RecommendedCards'
+import globeIcon from './../../../assets/globe.png'
+import locationIcon from './../../../assets/location.png'
 
 const LocationDetails = ({ location }) => {
   const [showTags, setShowTags] = useState(false)
@@ -48,8 +50,13 @@ const LocationDetails = ({ location }) => {
       <article id="mapDetails" className="dataColumn_container">
         <section className="dataContainer_header">
           <h2>{location.fullName}</h2>
-          <a target="_blank" rel="noreferrer" href={location.url}>
-            globe
+          <a
+            title="Check Out Park On NPS.gov"
+            target="_blank"
+            rel="noreferrer"
+            href={location.url}
+          >
+            <img src={globeIcon} alt="globe icon" width="20px" height="20px" />
           </a>
         </section>
         <span className="dataContainer_state">{location.states}</span>
@@ -62,15 +69,23 @@ const LocationDetails = ({ location }) => {
             onClick={() => setShowTags((prev) => !prev)}
           >
             {showTags
-              ? 'hide available activities'
-              : 'show more available activities'}
+              ? 'Hide Available Activities'
+              : 'Show More Available Activities'}
           </button>
         </div>
         {activitiesList ? (
           <>
             <div className="divider"></div>
             <section className="dataContainer_recommended">
-              <h3>Recommended Activities</h3>
+              <h3>
+                <img
+                  src={locationIcon}
+                  alt="location marker icon"
+                  width="18px"
+                  height="18px"
+                />
+                Recommended Activities
+              </h3>
               <div className="dataContainer_cardWrap">
                 <RecommendedCards activitiesList={activitiesList} />
               </div>
