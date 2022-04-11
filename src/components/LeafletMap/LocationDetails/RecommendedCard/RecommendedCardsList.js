@@ -1,21 +1,21 @@
-import React, { useState, useMemo } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import RecommendedCard from './RecommendedCard'
 import './RecommendedCard.scss'
 
-const RecommendedCards = ({ activitiesList }) => {
+const RecommendedCardsList = ({ activitiesList }) => {
   //creates list of recommended activity cards
-  const activityCards = useMemo(() => {
+  const activityCards = () => {
     if (activitiesList) {
       return activitiesList.map((item) => {
         return <RecommendedCard key={item.id} activity={item} />
       })
     }
-  }, [activitiesList])
+  }
 
   return <>{activityCards}</>
 }
-RecommendedCards.propTypes = {
+RecommendedCardsList.propTypes = {
   activitiesList: PropTypes.array,
 }
-export default RecommendedCards
+export default RecommendedCardsList

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import services from './../services/locations'
 
 import './LocationDetails.scss'
-import RecommendedCards from './RecommendedCard/RecommendedCards'
+import RecommendedCardsList from './RecommendedCard/RecommendedCardsList'
 import globeIcon from './../../../assets/globe.png'
 import locationIcon from './../../../assets/location.png'
 
@@ -47,51 +47,60 @@ const LocationDetails = ({ location }) => {
   return (
     <>
       <article id="mapDetails" className="dataColumn_container">
-        <section className="dataContainer_header">
-          <h2>{location.fullName}</h2>
-          <a
-            title="Check Out Park On NPS.gov"
-            target="_blank"
-            rel="noreferrer"
-            href={location.url}
-          >
-            <img src={globeIcon} alt="globe icon" width="20px" height="20px" />
-          </a>
-        </section>
-        <span className="dataContainer_state">{location.states}</span>
-        <p className="dataContainer_desc">{location.description}</p>
-        <div className="dataContainer_activitiesTags">
-          {LocationActivites}
-          {showTags ? secLocationActivites : ''}
-          <button
-            className="activitiesTag_showBtn"
-            onClick={() => setShowTags((prev) => !prev)}
-          >
-            {showTags
-              ? 'Hide Available Activities'
-              : 'Show More Available Activities'}
-          </button>
-        </div>
-        {activitiesList ? (
+        {location.fullName && (
           <>
-            <div className="divider"></div>
-            <section className="dataContainer_recommended">
-              <h3>
+            <section className="dataContainer_header">
+              <h2>{location.fullName}</h2>
+              <a
+                title="Check Out Park On NPS.gov"
+                target="_blank"
+                rel="noreferrer"
+                href={location.url}
+              >
                 <img
-                  src={locationIcon}
-                  alt="location marker icon"
-                  width="18px"
-                  height="18px"
+                  src={globeIcon}
+                  alt="globe icon"
+                  width="20px"
+                  height="20px"
                 />
-                Recommended Activities
-              </h3>
-              <div className="dataContainer_cardWrap">
-                <RecommendedCards activitiesList={activitiesList} />
-              </div>
+              </a>
             </section>
+            <span className="dataContainer_state">{location.states}</span>
+            <p className="dataContainer_desc">{location.description}</p>
+            <div className="dataContainer_activitiesTags">
+              {LocationActivites}
+              {showTags ? secLocationActivites : ''}
+              <button
+                className="activitiesTag_showBtn"
+                onClick={() => setShowTags((prev) => !prev)}
+              >
+                {showTags
+                  ? 'Hide Available Activities'
+                  : 'Show More Available Activities'}
+              </button>
+            </div>
+            {activitiesList ? (
+              <>
+                <div className="divider"></div>
+                <section className="dataContainer_recommended">
+                  <h3>
+                    <img
+                      src={locationIcon}
+                      alt="location marker icon"
+                      width="18px"
+                      height="18px"
+                    />
+                    Recommended Activities
+                  </h3>
+                  <div className="dataContainer_cardWrap">
+                    <RecommendedCardsList activitiesList={activitiesList} />
+                  </div>
+                </section>
+              </>
+            ) : (
+              ''
+            )}
           </>
-        ) : (
-          ''
         )}
       </article>
     </>

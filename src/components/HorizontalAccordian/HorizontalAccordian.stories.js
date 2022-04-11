@@ -4,7 +4,9 @@ export default {
   title: 'Image Displays/Horizontal Image Accordian',
   component: HorizontalAccordian,
   argsTypes: {
-    numberOfPanels: { type: 'range', min: 2, max: 5, step: 1 },
+    numberOfPanels: {
+      control: { type: 'range', min: 2, max: 5, step: 1 },
+    },
   },
 }
 

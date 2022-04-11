@@ -5,6 +5,7 @@ import services from './../services/locations'
 
 import './LocationActivies.scss'
 
+// Not in Use
 const LocationActivities = ({ location }) => {
   const [selectedActivity, setSelectedActivity] = useState(null)
   const [selectedActivityDetails, setSelectedActivityDetails] = useState(null)
