@@ -14,7 +14,6 @@
 
   /* Track */
   ::-webkit-scrollbar-track {
-    // box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
     background-color: #ccdddf;
   }
@@ -114,13 +113,11 @@
     height: 100vh;
     border-radius: 0;
     box-shadow: -4px 0px 2px 3px rgb(108, 129, 132, 0.3);
-    // overflow-x: auto;
   }
 }
 
 .dataColumn_container {
   padding: 28px 32px 20px;
-  // border-radius: 4px;
   background-color: #fcfdfd;
   min-height: 100vh;
   box-shadow: -4px 0px 2px 3px rgb(108, 129, 132, 0.3);
@@ -136,12 +133,6 @@
     -webkit-filter: contrast(1.2) url('./../../assets/filter.svg/#teal-white');
     filter: contrast(1.2) url('./../../assets/filter.svg/#teal-white');
   }
-
-  // @media (min-width: 1200px) {
-  //   .map-container {
-  //     height: calc(100vh - 255px);
-  //   }
-  // }
 
   .leaflet-control-attribution {
     display: none;

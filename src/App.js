@@ -1,22 +1,41 @@
 // import HorizontalAccordian from './components/HorizontalAccordian/HorizontalAccordian';
 import './App.scss'
+import SplitLanding from './components/SplitLanding/SplitLanding'
+import SplitLandingPartitions from './components/SplitLanding/SplitLandingPartitions'
 import NationalParksMap from './components/LeafletMap/NationalParksMap'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <a
-          className="App-link"
-          href="https://www.google.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Horizontal Image Accordian
-        </a>
-
-        <NationalParksMap />
-
+        {/* <NationalParksMap /> */}
+        <SplitLanding>
+          <SplitLandingPartitions
+            classes={['overlay--blue']}
+            backgroundData={{
+              src: './assets/images/homeOffice.webp',
+              color: 'red',
+            }}
+          >
+            <h2>
+              <span>Do You Prefer</span>
+              <br />
+              Working At Home
+            </h2>
+            <button className="btn__outlined">View the Perks!</button>
+          </SplitLandingPartitions>
+          <SplitLandingPartitions
+            classes={['overlay--purple']}
+            backgroundData={{ src: './assets/images/office.webp' }}
+          >
+            <h2>
+              <span>Do You Prefer</span>
+              <br />
+              Working In An Office
+            </h2>
+            <button className="btn__outlined">View the Perks!</button>
+          </SplitLandingPartitions>
+        </SplitLanding>
         {/* <ProgressSteps steps={[
           'First',
           'Second',

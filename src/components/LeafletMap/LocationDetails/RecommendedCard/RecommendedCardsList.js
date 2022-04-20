@@ -13,7 +13,7 @@ const RecommendedCardsList = ({ activitiesList }) => {
     }
   }
 
-  return <>{activityCards}</>
+  return <>{activityCards()}</>
 }
 RecommendedCardsList.propTypes = {
   activitiesList: PropTypes.array,
